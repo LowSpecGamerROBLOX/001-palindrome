@@ -25,21 +25,29 @@
     <p id="result">Result will appear here</p>
 
     <script>
-        let outputText = document.getElementById("result")
+        // get the output element
+       let outputText = document.getElementById("result")
 
+        // function to reverse a string
         function reverseString(string) {
             return string.split("").reverse().join("")
         }
 
+        // check if the input is a palindrome
         function checkPalindrome() {
             const textInput = document.getElementById("textinput")
 
+            // check if the input is empty
             if (!textInput.value) {
                 return
             }
 
+            // code to check if the input is a palindrome
             outputText.textContent = reverseString(textInput.value) == textInput.value ? `The word ${textInput.value} is a palindrome!` : `The word ${textInput.value} is not a palindrome!`
         }
+
+        // thank you copilot for helping me write these comments
+        // this is my first time using copilot
 
     </script>
 </body>
