@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+<body>
+
+    <h1 id="header">Palindrome Checker</h1>
+    <p id="website-summary">
+        This is a small website that allows
+        you to input a string and check
+        if the given string is a palindrome
+    </p>
+
+    <p id="term-definition">
+        A palindrome is a string of text
+        that is the same in its reversed form
+    </p>
+
+    <input id="textinput" type="text">
+    <button id="check" onclick="checkPalindrome()">Check</button>
+
+    <p id="result">Result will appear here</p>
+
+    <script>
+        let outputText = document.getElementById("result")
+
+        function reverseString(string) {
+            return string.split("").reverse().join("")
+        }
+
+        function checkPalindrome() {
+            const textInput = document.getElementById("textinput")
+
+            if (!textInput.value) {
+                return
+            }
+
+            outputText.textContent = reverseString(textInput.value) == textInput.value ? `The word ${textInput.value} is a palindrome!` : `The word ${textInput.value} is not a palindrome!`
+        }
+
+    </script>
+</body>
+</html>
